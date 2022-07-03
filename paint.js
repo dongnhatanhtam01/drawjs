@@ -18,7 +18,8 @@ class paint {
         }
 
         this.drawing = false
-        this.snapShot = null
+        this.oldImage = null
+        this.newImage = null
 
         // for line function only
         this.startPos = {
@@ -42,8 +43,7 @@ class paint {
     mouseDown(event) {
         console.log("mousedown");
         this.saveState()
-        this.image = new Image
-        this.image.src = this.canvas.toDataURL("image/bmp", 1.0) //.replace("data:image/png;base64,","")
+
         // document.body.appendChild(this.image)
 
         let mousePos = this.getMousePos(event)
@@ -88,14 +88,19 @@ class paint {
         });
     }
 
-    saveState() {}
+    saveState() {
+        this.oldImage = new Image
+        this.oldImage.src = this.canvas.toDataURL("image/bmp", 1.0) //.replace("data:image/png;base64,","")
+    }
 
     undo() {
-        this.ctx.drawImage(this.image, 0, 0, 800, 500)
+        this.newImage = new Image
+        this.newImage.src = this.canvas.toDataURL("image/bmp", 1.0) //.replace("data:image/png;base64,","")
+        this.ctx.drawImage(this.oldImage, 0, 0, 800, 500)
     }
 
     redo() {
-        
+        this.ctx.drawImage(this.newImage, 0, 0, 800, 500)
     }
 
     drawBackground() {

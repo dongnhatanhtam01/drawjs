@@ -38,6 +38,7 @@
 </head>
 
 <body>
+    <x-foo-with-markup></x-foo-with-markup>>
     <div id="tools">
         <button onclick="undo()">undo</button>
         <button onclick="redo()">redo</button>
@@ -59,6 +60,7 @@
     <canvas id="board"></canvas>
 </body>
 <script type="text/javascript" src="./paint.js"></script>
+<script type="text/javascript" src="./component/customeElement.js"></script>
 <script>
     function changeColor(color) {
         p.color = color

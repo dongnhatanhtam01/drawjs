@@ -38,29 +38,12 @@
 </head>
 
 <body>
-    <x-foo-with-markup></x-foo-with-markup>>
-    <div id="tools">
-        <button onclick="undo()">undo</button>
-        <button onclick="redo()">redo</button>
-
-        <button onclick="setTool('rect')">rect</button>
-        <button onclick="setTool('pen')">Pen</button>
-        <button onclick="setTool('line')">Line</button>
-
-        <button onclick="changeColor('#ff0000')">Red</button>
-        <button onclick="changeColor('#000000')">Black</button>
-        <button onclick="changeColor('#00ff00')">Green</button>
-
-        <button onclick="changeLineWidth(1)">1</button>
-        <button onclick="changeLineWidth(2)">2</button>
-        <button onclick="changeLineWidth(3)">3</button>
-        <button onclick="changeLineWidth(4)">4</button>
-        <button onclick="changeLineWidth(10)">10</button>
-    </div>
+    <!-- <x-foo-with-markup></x-foo-with-markup> -->
+    <my-element></my-element>
     <canvas id="board"></canvas>
 </body>
 <script type="text/javascript" src="./paint.js"></script>
-<script type="text/javascript" src="./component/customeElement.js"></script>
+<script type="text/javascript" src="./component/component.js"></script>
 <script>
     function changeColor(color) {
         p.color = color
